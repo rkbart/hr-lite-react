@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import Header from './components/header';
+import Sidebar from './components/sidebar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="h-screen overflow-hidden">
+      {/* Fixed Header */}
+      <Header />
+
+      {/* Sidebar + Content */}
+      <div className="flex pt-16 h-full">
+        <Sidebar />
+        <main className="flex-1 bg-gray-100 p-4 overflow-y-auto">
+          {/* Main content goes here */}
+          <h1 className="text-xl font-semibold">Welcome to the Dashboard</h1>
+        </main>
+      </div>
     </div>
   );
 }
