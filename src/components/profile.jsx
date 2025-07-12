@@ -1,7 +1,7 @@
 function Profile() {
   return (
     <div>
-      <h1 className="text-xl font-semibold">Welcome to the Profiles Page</h1>
+      <h1 className="text-xl font-semibold">Name: John Doe</h1>
     </div>
   );
 }

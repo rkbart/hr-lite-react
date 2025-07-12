@@ -1,12 +1,11 @@
 import './index.css';
 import Header from './components/header';
 import Sidebar from './components/sidebar';
-import Profile from './components/profile';
-import Dashboard from './components/dashboard';
-import Employees from './components/employees';
-import Attendance from './components/attendance';
-import Leaves from './components/leaves';
-import Payslips from './components/payslips';
+import Dashboard from './components/pages/dashboard';
+import Employees from './components/pages/employees';
+import Attendance from './components/pages/attendance';
+import Leaves from './components/pages/leaves';
+import Payslips from './components/pages/payslips';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
         <div className="flex pt-16 h-full">
           <Sidebar />
           <main className="flex-1 bg-gray-100 p-4 overflow-y-auto">
-            <Profile />
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/employees" element={<Employees />} />
