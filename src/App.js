@@ -1,22 +1,37 @@
 import './index.css';
 import Header from './components/header';
 import Sidebar from './components/sidebar';
+import Profile from './components/profile';
+import Dashboard from './components/dashboard';
+import Employees from './components/employees';
+import Attendance from './components/attendance';
+import Leaves from './components/leaves';
+import Payslips from './components/payslips';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="h-screen overflow-hidden">
-      {/* Fixed Header */}
-      <Header />
+    <Router>
+      <div className="h-screen overflow-hidden">
+        {/* Header */}
+        <Header />
 
-      {/* Sidebar + Content */}
-      <div className="flex pt-16 h-full">
-        <Sidebar />
-        <main className="flex-1 bg-gray-100 p-4 overflow-y-auto">
-          {/* Main content goes here */}
-          <h1 className="text-xl font-semibold">Welcome to the Dashboard</h1>
-        </main>
+        {/* Sidebar */}
+        <div className="flex pt-16 h-full">
+          <Sidebar />
+          <main className="flex-1 bg-gray-100 p-4 overflow-y-auto">
+            <Profile />
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/employees" element={<Employees />} />
+              <Route path="/attendance" element={<Attendance />} />
+              <Route path="/leaves" element={<Leaves />} />
+              <Route path="/payslips" element={<Payslips />} />
+            </Routes>
+          </main>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
