@@ -1,4 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 function Header() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // localStorage.removeItem("token"); 
+    navigate("/login"); 
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 h-16 bg-blue-600 text-white flex items-center justify-between px-6 shadow z-50">
       <div className="flex items-center gap-2">
@@ -8,7 +17,10 @@ function Header() {
         </h2>
       </div>
       <div>
-        <button className="bg-white text-blue-600 px-4 py-2 rounded-lg">
+        <button
+          onClick={handleLogout}
+          className="bg-white text-blue-600 px-4 py-2 rounded-lg"
+        >
           Logout
         </button>
       </div>
