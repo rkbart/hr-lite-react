@@ -2,8 +2,15 @@ import Profile from "../profile";
 import { FaRegClock } from "react-icons/fa";
 import { FaBriefcase } from "react-icons/fa";
 import { FaRegNoteSticky } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
+  const navigate = useNavigate();
+
+  const handleClockInClick = () => {
+    navigate("/attendance");
+  };
+
   return (
     <div className="space-y-6">
       <Profile />
@@ -22,7 +29,9 @@ function Dashboard() {
           <p className="text-gray-600 mb-4">
             Manually clock in and out to track your working hours
           </p>
-          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition">
+          <button
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition"
+            onClick={handleClockInClick}>
             Clock In
           </button>
         </div>

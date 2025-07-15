@@ -7,28 +7,40 @@ function Sidebar() {
         <li>
           <Link
             to="/"
-            className="text-gray-700 font-medium hover:text-blue-600"
+            className="text-gray-600 font-medium hover:text-blue-600"
           >
             Dashboard
           </Link>
         </li>
         <li>
-          <Link to="/employees" className="text-gray-600 hover:text-blue-600">
+          <Link
+            to="/employees"
+            className="text-gray-600 font-medium hover:text-blue-600"
+          >
             Employees
           </Link>
         </li>
         <li>
-          <Link to="/attendance" className="text-gray-600 hover:text-blue-600">
+          <Link
+            to="/attendance"
+            className="text-gray-600 font-medium hover:text-blue-600"
+          >
             Attendance
           </Link>
         </li>
         <li>
-          <Link to="/leaves" className="text-gray-600 hover:text-blue-600">
+          <Link
+            to="/leaves"
+            className="text-gray-600 font-medium hover:text-blue-600"
+          >
             Leaves
           </Link>
         </li>
         <li>
-          <Link to="/payslips" className="text-gray-600 hover:text-blue-600">
+          <Link
+            to="/payslips"
+            className="text-gray-600 font-medium hover:text-blue-600"
+          >
             Pay Slips
           </Link>
         </li>
