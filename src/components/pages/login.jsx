@@ -1,4 +1,16 @@
-function Login() {
+function Login( { onLogin } ) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    if (email === "admin@hrlite.com" && password === "password123") {
+      onLogin(); 
+    } else {
+      alert("Invalid email or password");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center font-sans">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
@@ -9,13 +21,14 @@ function Login() {
           </p>
         </div>
 
-        <form className="space-y-6">
+        <form className="space-y-6" onSubmit={handleSubmit}>
           {/* Email Field */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Email
             </label>
             <input
+              name="email"
               type="email"
               required
               placeholder="Enter your email"
@@ -29,6 +42,7 @@ function Login() {
               Password
             </label>
             <input
+              name="password"
               type="password"
               required
               placeholder="Enter your password"

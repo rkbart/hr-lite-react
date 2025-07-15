@@ -1,11 +1,6 @@
-import { useNavigate } from "react-router-dom";
-
-function Header() {
-  const navigate = useNavigate();
-
+function Header( { onLogout } ) {
   const handleLogout = () => {
-    // localStorage.removeItem("token"); 
-    navigate("/login"); 
+    onLogout();
   };
 
   return (
