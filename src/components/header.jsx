@@ -1,3 +1,5 @@
+import TimeDisplay from "./timeDisplay";
+
 function Header( { onLogout } ) {
   const handleLogout = () => {
     onLogout();
@@ -11,7 +13,8 @@ function Header( { onLogout } ) {
           Simple HR management made light and easy
         </h2>
       </div>
-      <div>
+      <div className = "flex justify-between items-center gap-2">
+        <TimeDisplay />
         <button
           onClick={handleLogout}
           className="bg-white text-blue-600 px-4 py-2 rounded-lg"
